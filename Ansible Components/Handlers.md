@@ -5,7 +5,6 @@ Handlers are special tasks triggered by a notify statement in other tasks. They 
 - **Example: Using a Handler**:
 
 ```
----
 - name: Install Apache on RHEL server
   hosts: webserver
   tasks:

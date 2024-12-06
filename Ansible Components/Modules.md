@@ -13,5 +13,3 @@ Modules (also referred to as “task plugins” or “library plugins”) are di
         name: httpd
         state: present
 ```
-
----

@@ -61,7 +61,7 @@ After the installation is complete, verify it by checking the version of Ansible
 
 - **Controller Node**: The machine where Ansible is installed and from where tasks are executed.</br></br>
 - **Managed Node-1**: The machines that the controller manages and configures. This will be the first target node.</br></br>
-- **Managed Node-2**: This will be the second target node.</br>
+- **Managed Node-2**: This will be the second target node.</br></br>
 - **Configure Security Groups**: Make sure the security groups for the slave servers allow traffic from the master server, especially on SSH (port 22) and HTTP (port 80).</br></br>
 
 ### 2. Install and Configure Ansible on the Master Server

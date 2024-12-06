@@ -1,5 +1,3 @@
-*🚀 "Before learning any technology in the world of Information Technology, you should ask yourself these two questions before diving into it. Why?, What?"*
-
 ---
 
 ## Why Ansible?
@@ -9,7 +7,7 @@ Its architecture allows it to scale without requiring complex infrastructure or 
 
 ---
 
-## Ansible is popular in DevOps and IT automations for several reasons:
+## Ansible is popular in DevOps and IT Automations for several reasons:
 
 #### 1. Simplicity
 Ansible uses YAML(Yet Another Markup Language) for its playbooks, which is easy to read and write. This reduces the learning curve compared to other configuration management tools.
@@ -37,7 +35,7 @@ Ansible has a strong community that provides a wealth of modules, roles, and pla
 ## What is Ansible?
 Ansible is an open-source IT configuration management, deployment, and orchestration tool designed to deliver significant productivity gains across a wide array of automation challenges. Written in Python, Ansible automatically installs the Python interpreter when you install it on your system.</br></br>
 
-#### 1. Ansible Hisotory
+#### 1. Ansible History
 Ansible was developed by **Michael DeHaan**, with the project beginning in February 2012. In 2015, **RedHat** acquired Ansible, further integrating it into the enterprise IT landscape. </br>
   
 #### 2. Availability

@@ -6,7 +6,7 @@ An Ansible Playbook is a YAML file where you define the automation tasks to achi
 
 ```
 - name: Patch and update servers
-  hosts: all
+  hosts: servers
   become: yes
   tasks:
     - name: Update the package manager cache
@@ -29,3 +29,26 @@ An Ansible Playbook is a YAML file where you define the automation tasks to achi
       reboot:
         reboot_timeout: 300
 ```
+
+- **Executing the Playbook**:
+
+Step 1: Prepare the Inventory - Create an inventory file named hosts to define the servers.
+
+```
+  [servers]
+  node1 ansible_host=3.142.79.205
+  node2 ansible_host=3.143.210.190
+
+  [all:vars]
+  ansible_python_interpreter=/usr/bin/python3
+  ansible_user=ubuntu
+  ansible_ssh_private_key_file=/home/ubuntu/keys/ansible-master-key.pem
+
+```
+
+Step 2: Execute the playbook using the ansible-playbook command.
+
+```
+ansible-playbook -i hosts patch_server.yml
+```
+

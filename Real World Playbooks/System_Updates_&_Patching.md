@@ -1,1 +1,0 @@
-## System Updates and Patching

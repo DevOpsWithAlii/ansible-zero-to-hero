@@ -11,8 +11,7 @@
 #### [6. Infrastructure as Code with Ansible](https://github.com/LondheShubham153/ansible-zero-to-hero/blob/main/Ansible%20Components/Variables.md)
 #### [7. Patch Management](https://github.com/LondheShubham153/ansible-zero-to-hero/blob/main/Ansible%20Components/Templates.md)
 #### [8. Provisioning Cloud Infrastructure](https://github.com/LondheShubham153/ansible-zero-to-hero/blob/main/Ansible%20Components/Handlers.md)
-#### [9. Plugins](https://github.com/LondheShubham153/ansible-zero-to-hero/blob/main/Ansible%20Components/Plugins.md)
-#### [10. Setup Jenkins on a Server](https://github.com/LondheShubham153/ansible-zero-to-hero/blob/main/Ansible%20Components/Facts.md)
+#### [9. Setup Jenkins on a Server](https://github.com/LondheShubham153/ansible-zero-to-hero/blob/main/Ansible%20Components/Facts.md)
 #### [10. User Management](https://github.com/LondheShubham153/ansible-zero-to-hero/blob/main/Ansible%20Components/Vault.md)
 
 ---

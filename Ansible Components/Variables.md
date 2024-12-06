@@ -7,7 +7,6 @@ Variables allow dynamic content in playbooks. They can be defined in multiple wa
 - **Example: Simple Playbook that prints a message to stdout**:
 
 ```
----
 - hosts: all
   vars:
     greetings: Hello Cloud & DevOps Learners!
@@ -26,7 +25,6 @@ When the playbook is executed, the value of the variable is accessed and printed
 - **Example: Playbook to Install and start Apache using Variable**:
 
 ```
----
 - name: Install and start Apache
   hosts: webservers
   become: true

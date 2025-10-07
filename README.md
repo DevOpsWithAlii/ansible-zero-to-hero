@@ -54,8 +54,12 @@ vim hosts
 **Example `hosts` file:**
 
 ```
-[node_group]
-3.145.29.59 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/ansible_key
+[servers]
+server1 ansible_host=3.145.29.59
+server2 ansible_host=3.150.114.25
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
 ```
 
 ---

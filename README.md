@@ -106,7 +106,8 @@ KEY="--private-key=~/.ssh/ansible_key"
 ```bash
 ansible all -m apt -a "name=nginx state=present update_cache=yes" -b -i $INVENTORY $KEY
 ```
-
+---
+```
 
 ansible all \                        # Run this on all hosts in the inventory
   -m apt \                           # Use the Ansible apt module (for Debian/Ubuntu package management)

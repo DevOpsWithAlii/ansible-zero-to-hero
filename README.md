@@ -88,24 +88,122 @@ ansible all -a "free -h" -i /home/ubuntu/ansible/hosts --private-key=~/.ssh/ansi
 
 ---
 
-### ✅ Summary
+Absolutely — here's a **clean, copy-paste-ready version** of the most important Ansible ad-hoc commands you've used, grouped by purpose and **without repetition**.
 
-* Installed and configured **Ansible**
-* Created SSH key and connected to node
-* Added host info in custom inventory file
-* Verified connection using **`ansible ping`**
-* Executed remote command successfully using Ansible 🎯
+You can save this as a `.md` (Markdown) or `.sh` file in your Git repo for documentation or future use.
 
-## 📚 Overview
+---
 
-Welcome to **Ansible Zero to Hero**, your one-stop resource for learning and mastering Ansible! Whether you're a beginner or an experienced DevOps engineer, this repository has everything you need to automate your infrastructure with Ansible.
+## 🧰 Ansible Ad-Hoc Commands Cheat Sheet
 
-This guide covers:
+### ✅ **Inventory and SSH Setup**
 
-- **Installation**: Step-by-step instructions for getting Ansible up and running.
-- **Hosts Configuration**: How to set up and manage your inventory.
-- **Ad-Hoc Commands**: Quick and powerful commands for one-time tasks.
-- **Playbooks**: Automate complex tasks with reusable Ansible playbooks.
-- **Real-World Examples**: Practical examples to help you apply what you've learned.
+```bash
+# Inventory file path
+INVENTORY="/home/ubuntu/ansible/hosts"
+
+# SSH key for connection
+KEY="--private-key=~/.ssh/ansible_key"
+```
+
+---
+
+### 📦 **Install Nginx (Ubuntu/Debian)**
+
+```bash
+ansible all -m apt -a "name=nginx state=present update_cache=yes" -b -i $INVENTORY $KEY
+```
+
+---
+
+### 🛑 **Stop and Disable Nginx**
+
+```bash
+# Stop the nginx service
+ansible all -m ansible.builtin.service -a "name=nginx state=stopped" -b -i $INVENTORY $KEY
+
+# Disable nginx from starting on boot
+ansible all -a "systemctl disable nginx" -b -i $INVENTORY $KEY
+```
+
+---
+
+### ❌ **Remove Nginx**
+
+```bash
+# Uninstall nginx (keeps config files)
+ansible all -m apt -a "name=nginx state=absent" -b -i $INVENTORY $KEY
+
+# OR uninstall and remove config files
+ansible all -m apt -a "name=nginx state=absent purge=yes" -b -i $INVENTORY $KEY
+```
+
+---
+
+### 📊 **System Monitoring Commands**
+
+```bash
+# Memory usage
+ansible all -a "free -h" -i $INVENTORY $KEY
+
+# Disk usage
+ansible all -a "df -h" -i $INVENTORY $KEY
+
+# CPU and uptime
+ansible all -a "uptime" -i $INVENTORY $KEY
+
+# Hostname
+ansible all -a "hostname" -i $INVENTORY $KEY
+
+# OS info
+ansible all -a "cat /etc/os-release" -i $INVENTORY $KEY
+```
+
+---
+
+### 🔧 **Package Management Examples**
+
+```bash
+# Install multiple packages
+ansible all -m apt -a "name=curl,git,state=present update_cache=yes" -b -i $INVENTORY $KEY
+
+# Upgrade all packages
+ansible all -m apt -a "upgrade=dist" -b -i $INVENTORY $KEY
+```
+
+---
+
+### 🛠️ **Service Management Examples**
+
+```bash
+# Start nginx
+ansible all -m ansible.builtin.service -a "name=nginx state=started" -b -i $INVENTORY $KEY
+
+# Restart nginx
+ansible all -m ansible.builtin.service -a "name=nginx state=restarted" -b -i $INVENTORY $KEY
+
+# Check if nginx is active
+ansible all -a "systemctl is-active nginx" -b -i $INVENTORY $KEY
+```
+
+---
+
+### 📁 **Useful File/Log Commands**
+
+```bash
+# View disk usage by user
+ansible all -a "du -sh /home/*" -b -i $INVENTORY $KEY
+
+# Show last 50 lines of syslog
+ansible all -a "tail -n 50 /var/log/syslog" -b -i $INVENTORY $KEY
+```
+
+---
+
+## ✅ Notes
+
+* All commands assume you have passwordless SSH set up using `ansible_key`.
+* `-b` is used to escalate privilege (like `sudo`) where required.
+* Replace `all` with group names if your inventory defines them (e.g., `webservers`).
 
 ---

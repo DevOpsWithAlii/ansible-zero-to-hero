@@ -86,13 +86,6 @@ ansible all -m ping -i /home/ubuntu/ansible/hosts --private-key=~/.ssh/ansible_k
 ansible all -a "free -h" -i /home/ubuntu/ansible/hosts --private-key=~/.ssh/ansible_key
 ```
 
----
-
-Absolutely — here's a **clean, copy-paste-ready version** of the most important Ansible ad-hoc commands you've used, grouped by purpose and **without repetition**.
-
-You can save this as a `.md` (Markdown) or `.sh` file in your Git repo for documentation or future use.
-
----
 
 ## 🧰 Ansible Ad-Hoc Commands Cheat Sheet
 

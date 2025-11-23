@@ -95,7 +95,9 @@ ansible all -m ping
 ### 8️⃣ Run Test Command on All Nodes
 
 ```bash
-ansible all -a "free -h" -i /home/ubuntu/ansible/hosts --private-key=~/.ssh/ansible_key
+ansible all -a "free -h" -i /home/ubuntu/ansible/hosts    or
+ansible all -a "free -h" 
+
 ```
 
 

@@ -122,19 +122,19 @@ KEY="--private-key=~/.ssh/ansible_key"
 
 ```bash
 # system update
-ansible server1 -b -a "apt-get update" -i $INVENTORY
+ansible server1 -b -a "apt-get update" 
 
 # install nginx
-ansible server1 -b -a "apt-get install nginx" -i $INVENTORY
+ansible server1 -b -a "apt-get install nginx" 
 
 # Stop nginx
-ansible server1 -b -a "systemctl stop nginx" -i $INVENTORY
+ansible server1 -b -a "systemctl stop nginx" 
 
 # Uninstall nginx (keeps config files)
-ansible server1 -b -a "apt-get remove nginx -y" -i $INVENTORY
+ansible server1 -b -a "apt-get remove nginx -y" 
 
 # OR uninstall and remove config files
-ansible server1 -b -a "apt-get purge nginx nginx-common -y" -i $INVENTORY
+ansible server1 -b -a "apt-get purge nginx nginx-common -y" 
 
 
 ```
@@ -145,16 +145,16 @@ ansible server1 -b -a "apt-get purge nginx nginx-common -y" -i $INVENTORY
 
 ```bash
 # system update
-ansible server1/all -b -a "apt-get update" -i $INVENTORY
+ansible server1/all -b -a "apt-get update" 
 
 # Docker install
-ansible server1 -b -a "apt-get install docker.io -y" -i $INVENTORY
+ansible server1 -b -a "apt-get install docker.io -y" 
 
 # Docker status
-ansible server1 -b -a "systemctl status docker" -i $INVENTORY
+ansible server1 -b -a "systemctl status docker" 
 
 # Docker Remove
-ansible server1 -b -a "apt-get remove docker.io -y" -i $INVENTORY
+ansible server1 -b -a "apt-get remove docker.io -y" 
 
 
 ```
@@ -165,19 +165,19 @@ ansible server1 -b -a "apt-get remove docker.io -y" -i $INVENTORY
 
 ```bash
 # Memory usage
-ansible all -a "free -h" -i $INVENTORY  or  ansible all -a "free -h"
+ansible all -a "free -h" 
 
 # Disk usage
-ansible all -a "df -h" -i $INVENTORY 
+ansible all -a "df -h" 
 
 # CPU and uptime
-ansible all -a "uptime" -i $INVENTORY 
+ansible all -a "uptime" 
 
 # Hostname
-ansible all -a "hostname" -i $INVENTORY 
+ansible all -a "hostname" 
 
 # OS info
-ansible all -a "cat /etc/os-release" -i $INVENTORY
+ansible all -a "cat /etc/os-release" 
 ```
 
 ---

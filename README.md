@@ -117,31 +117,17 @@ KEY="--private-key=~/.ssh/ansible_key"
 ### 📦 **Install Nginx (Ubuntu/Debian)**
 
 ```bash
-ansible all -m apt -a "name=nginx state=present update_cache=yes" -b -i $INVENTORY $KEY
+ansible server1 -b -a "apt-get update" -i $INVENTORY
 ```
 ---
+
+### ❌ **Stop Nginx**
 ```
-
-ansible all \                        # Run this on all hosts in the inventory
-  -m apt \                           # Use the Ansible apt module (for Debian/Ubuntu package management)
-  -a "name=nginx state=present update_cache=yes" \  # Arguments to the module:
-                                                    # name=nginx         → Package to install
-                                                    # state=present      → Ensure it's installed (if already installed, do nothing)
-                                                    # update_cache=yes   → Run 'apt-get update' before installing
-  -b \                               # Run with sudo (become)
-  -i $INVENTORY \                    # Path to inventory file (list of hosts)
-  $KEY                               # SSH private key to access target machines
-
----
-
-### 🛑 **Stop and Disable Nginx**
-
 ```bash
-# Stop the nginx service
-ansible all -m ansible.builtin.service -a "name=nginx state=stopped" -b -i $INVENTORY $KEY
+# Stop nginx
+ansible server1 -b -a "systemctl stop nginx" -i $INVENTORY
 
-# Disable nginx from starting on boot
-ansible all -a "systemctl disable nginx" -b -i $INVENTORY $KEY
+
 ```
 
 ---
@@ -150,10 +136,11 @@ ansible all -a "systemctl disable nginx" -b -i $INVENTORY $KEY
 
 ```bash
 # Uninstall nginx (keeps config files)
-ansible all -m apt -a "name=nginx state=absent" -b -i $INVENTORY $KEY
+ansible server1 -b -a "apt-get remove nginx -y" -i $INVENTORY
 
 # OR uninstall and remove config files
-ansible all -m apt -a "name=nginx state=absent purge=yes" -b -i $INVENTORY $KEY
+ansible server1 -b -a "apt-get purge nginx nginx-common -y" -i $INVENTORY
+
 ```
 
 ---

@@ -58,8 +58,8 @@ vim hosts
 
 ```
 [servers]
-server1 ansible_host=3.145.29.59
-server2 ansible_host=3.150.114.25
+server1 ansible_host=3.145.29.59           #ansible_host is a keyword
+server2 ansible_host=3.150.114.25         #ansible_host is a keyword
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3

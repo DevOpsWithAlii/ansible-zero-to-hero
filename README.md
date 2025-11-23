@@ -39,6 +39,8 @@ ssh -i ~/.ssh/ansible_key ubuntu@3.145.29.59
 ### 4️⃣ Check Ansible Inventory File
 
 ```bash
+cd /etc/ansible
+or
 cat /etc/ansible/hosts
 ```
 

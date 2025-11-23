@@ -118,28 +118,16 @@ KEY="--private-key=~/.ssh/ansible_key"
 
 ```bash
 ansible server1 -b -a "apt-get update" -i $INVENTORY
-```
----
 
-### ❌ **Stop Nginx**
-```
-```bash
 # Stop nginx
 ansible server1 -b -a "systemctl stop nginx" -i $INVENTORY
 
-
-```
-
----
-
-### ❌ **Remove Nginx**
-
-```bash
 # Uninstall nginx (keeps config files)
 ansible server1 -b -a "apt-get remove nginx -y" -i $INVENTORY
 
 # OR uninstall and remove config files
 ansible server1 -b -a "apt-get purge nginx nginx-common -y" -i $INVENTORY
+
 
 ```
 

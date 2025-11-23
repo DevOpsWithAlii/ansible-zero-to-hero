@@ -75,6 +75,8 @@ ansible_ssh_private_key_file=/home/ubuntu/.ssh/ansible_key
 ### 6️⃣ Verify Inventory
 
 ```bash
+ansible-inventory --list       or
+ansible-inventory --list -y      or
 ansible-inventory --list -y -i /home/ubuntu/ansible/hosts
 ```
 

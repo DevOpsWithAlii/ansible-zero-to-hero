@@ -61,10 +61,9 @@ vim hosts
 server1 ansible_host=3.145.29.59              #ansible_host is a keyword
 server2 ansible_host=3.150.114.25             #ansible_host is a keyword
 
-[servers]
-ansible_user=ubuntu
 
 [all:vars]
+ansible_user=ubuntu
 ansible_python_interpreter=/usr/bin/python3
 ansible_ssh_private_key_file=/home/ubuntu/.ssh/ansible_key
 

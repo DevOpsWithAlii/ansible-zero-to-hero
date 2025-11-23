@@ -57,13 +57,17 @@ vim hosts
 **Example `hosts` file:**
 
 ```
+[servers]                                     #it is a group {group of servers}
+server1 ansible_host=3.145.29.59              #ansible_host is a keyword
+server2 ansible_host=3.150.114.25             #ansible_host is a keyword
+
 [servers]
-server1 ansible_host=3.145.29.59           #ansible_host is a keyword
-server2 ansible_host=3.150.114.25         #ansible_host is a keyword
+ansible_user=ubuntu
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
-ansible_ssh_private_key=/home/ubuntu/.ssh/ansible_key
+ansible_ssh_private_key_file=/home/ubuntu/.ssh/ansible_key
+
 ```
 
 ---

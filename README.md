@@ -61,6 +61,7 @@ server2 ansible_host=3.150.114.25
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_private_key=/home/ubuntu/.ssh/ansible_key
 ```
 
 ---

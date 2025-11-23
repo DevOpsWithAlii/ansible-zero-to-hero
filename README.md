@@ -161,6 +161,29 @@ ansible server1 -b -a "apt-get remove docker.io -y"
 
 ---
 
+### 📦 **User managment**
+
+```bash
+# Create use
+ansible all -m user -b -a "name=ali state=present"
+# Delete use
+ansible all -m user -b -a "name=ali state=absent"
+
+# Create group
+ansible all -m group -b -a "name=DevOps state=present"
+# Delete group
+ansible all -m group -b -a "name=DevOps state=absent"
+
+# Add user into Group
+ansible server2 -m user -b -a "name=ali groups=devops append=yes"
+
+# Check Results {added or made user or not atc}
+ansible server2 -a "id ali"
+
+```
+
+---
+
 ### 📊 **System Monitoring Commands**
 
 ```bash

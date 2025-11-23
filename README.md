@@ -85,7 +85,9 @@ ansible-inventory --list -y -i /home/ubuntu/ansible/hosts
 ### 7️⃣ Test Ansible Connection
 
 ```bash
-ansible all -m ping -i /home/ubuntu/ansible/hosts --private-key=~/.ssh/ansible_key
+ansible all -m ping -i /home/ubuntu/ansible/hosts    or
+ansible all -m ping
+
 ```
 
 ---

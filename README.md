@@ -158,10 +158,10 @@ ansible all -a "cat /etc/os-release" -i $INVENTORY
 
 ```bash
 # Install multiple packages
-ansible all -m apt -a "name=curl,git,state=present update_cache=yes" -b -i $INVENTORY $KEY
+ansible all -m apt -a "name=curl,git,state=present update_cache=yes" -b -i $INVENTORY 
 
 # Upgrade all packages
-ansible all -m apt -a "upgrade=dist" -b -i $INVENTORY $KEY
+ansible all -m apt -a "upgrade=dist" -b -i $INVENTORY 
 ```
 
 ---
@@ -177,6 +177,13 @@ ansible all -m ansible.builtin.service -a "name=nginx state=restarted" -b -i $IN
 
 # Check if nginx is active
 ansible all -a "systemctl is-active nginx" -b -i $INVENTORY $KEY
+
+#-m apt → tells Ansible to use the apt module
+#state=present → ensures the packages exist
+#update_cache=yes → runs apt update
+#upgrade=dist → performs a full system upgrade
+#-b → become root (run with sudo)
+#-i $INVENTORY → use your inventory path variable
 ```
 
 ---

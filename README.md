@@ -137,19 +137,19 @@ ansible server1 -b -a "apt-get purge nginx nginx-common -y" -i $INVENTORY
 
 ```bash
 # Memory usage
-ansible all -a "free -h" -i $INVENTORY $KEY
+ansible all -a "free -h" -i $INVENTORY  or  ansible all -a "free -h"
 
 # Disk usage
-ansible all -a "df -h" -i $INVENTORY $KEY
+ansible all -a "df -h" -i $INVENTORY 
 
 # CPU and uptime
-ansible all -a "uptime" -i $INVENTORY $KEY
+ansible all -a "uptime" -i $INVENTORY 
 
 # Hostname
-ansible all -a "hostname" -i $INVENTORY $KEY
+ansible all -a "hostname" -i $INVENTORY 
 
 # OS info
-ansible all -a "cat /etc/os-release" -i $INVENTORY $KEY
+ansible all -a "cat /etc/os-release" -i $INVENTORY
 ```
 
 ---

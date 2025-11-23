@@ -10,6 +10,7 @@
 ### 1️⃣ Update & Install Ansible
 
 ```bash
+sudo add-apt-repository ppa:ansible/ansible
 sudo apt-get update -y
 sudo apt install ansible -y
 ```

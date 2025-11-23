@@ -216,10 +216,10 @@ ansible all -a "systemctl is-active nginx" -b -i $INVENTORY $KEY
 
 ```bash
 # View disk usage by user
-ansible all -a "du -sh /home/*" -b -i $INVENTORY $KEY
+ansible all -a "du -sh /home/*" -b -i $INVENTORY 
 
 # Show last 50 lines of syslog
-ansible all -a "tail -n 50 /var/log/syslog" -b -i $INVENTORY $KEY
+ansible all -a "tail -n 50 /var/log/syslog" -b -i $INVENTORY 
 ```
 
 ---

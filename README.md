@@ -117,7 +117,11 @@ KEY="--private-key=~/.ssh/ansible_key"
 ### 📦 **Install Nginx (Ubuntu/Debian)**
 
 ```bash
+# system update
 ansible server1 -b -a "apt-get update" -i $INVENTORY
+
+# install nginx
+ansible server1 -b -a "apt-get install nginx" -i $INVENTORY
 
 # Stop nginx
 ansible server1 -b -a "systemctl stop nginx" -i $INVENTORY
@@ -127,6 +131,26 @@ ansible server1 -b -a "apt-get remove nginx -y" -i $INVENTORY
 
 # OR uninstall and remove config files
 ansible server1 -b -a "apt-get purge nginx nginx-common -y" -i $INVENTORY
+
+
+```
+
+---
+
+### 📦 **Install Docker (Ubuntu/Debian)**
+
+```bash
+# system update
+ansible server1/all -b -a "apt-get update" -i $INVENTORY
+
+# Docker install
+ansible server1 -b -a "apt-get install docker.io -y" -i $INVENTORY
+
+# Docker status
+ansible server1 -b -a "systemctl status docker" -i $INVENTORY
+
+# Docker Remove
+ansible server1 -b -a "apt-get remove docker.io -y" -i $INVENTORY
 
 
 ```

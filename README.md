@@ -54,7 +54,7 @@ cd ~/ansible
 vim hosts
 ```
 
-**Example `hosts` file:**
+**Example Ansible inventory `hosts` file:**
 
 ```
 [servers]                                     #it is a group {group of servers}
